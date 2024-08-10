@@ -1,4 +1,4 @@
-# angular18-ngrx-modules
+# aseed-cust-dev
 
 
 ## How to run

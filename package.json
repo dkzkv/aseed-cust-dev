@@ -1,5 +1,5 @@
 {
-  "name": "angular18-ngrx-modules",
+  "name": "aseed-cust-dev",
   "version": "18.0.1",
   "description": "Angular 18 NgRx using modules",
   "author": {
@@ -11,7 +11,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "local-debug": "ng serve --proxy-config proxy.config.json"
   },
   "private": true,
   "dependencies": {

@@ -5,12 +5,7 @@ import { AseedCrudAbstractService } from "src/app/infrastructure/services/common
 @Injectable()
 export class IntroDataService extends AseedCrudAbstractService
 {
-    /**
-     *
-     */
     constructor() {
-        super(inject(HttpClient), '/api/test');
-        
-        
+        super(inject(HttpClient), 'http://localhost:7226/api/test');
     }
 }
