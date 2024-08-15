@@ -1,0 +1,9 @@
+.upload-wrapper-ul {
+  display: flex;
+  list-style: none;
+}
+.upload-wrapper-ul li {
+  display: flex;
+  align-content: flex-start;
+  flex-direction: column;
+}

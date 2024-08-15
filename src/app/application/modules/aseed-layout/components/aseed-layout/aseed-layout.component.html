@@ -1,0 +1,17 @@
+<div class="layout">
+    <div class="content-wrapper">
+      <!-- <aside class="sidebar" *ngComponentOutlet="sidebarComponent"> -->
+      <aside class="sidebar">
+        это сайд бар
+        <!-- Содержимое сайдбара -->
+      </aside>
+      <main class="main-content">
+        тест
+        <router-outlet></router-outlet>
+        <ng-content></ng-content>
+      </main>
+    </div>
+    <footer class="footer">
+      <!-- Содержимое футера -->
+    </footer>
+  </div>

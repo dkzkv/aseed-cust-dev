@@ -5,11 +5,13 @@ import {BrowserModule} from '@angular/platform-browser';
 import {EffectsModule} from '@ngrx/effects';
 import {isDevMode, NgModule} from '@angular/core';
 import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
-import {provideHttpClient, withInterceptorsFromDi} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi} from "@angular/common/http";
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {StoreModule} from '@ngrx/store';
 import {XxxCommonModule} from "./xxx-common/xxx-common.module";
 import {XxxHeaderModule} from "./xxx-header/xxx-header.module";
+import {AuthInterceptor} from "./infrastructure/interceptors/auth.interceptor";
+import { AseedLayoutModule } from './application/modules/aseed-layout/aseed-layout.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -34,6 +36,7 @@ import {XxxHeaderModule} from "./xxx-header/xxx-header.module";
   providers: [
     provideAnimationsAsync(),
     provideHttpClient(withInterceptorsFromDi()),
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ]
 })
 export class AppModule {

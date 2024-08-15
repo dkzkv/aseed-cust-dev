@@ -9,7 +9,7 @@ import {IntroDataService} from "../../services/intro-data.service";
 export class IntroBodyComponent implements OnInit {
 
   test: WritableSignal<any>
-
+  date= new Date();
   constructor(public _introDataService: IntroDataService) {
     this.test = signal("penis");
   }

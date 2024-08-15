@@ -9,6 +9,8 @@ import {RegistrationDialogComponent} from "./components/registration-dialog/regi
 import {UploadWrapperComponent} from "./components/upload-wrapper/upload-wrapper.component";
 import {IntroDataService} from "./services/intro-data.service";
 import {provideHttpClient, withInterceptorsFromDi} from "@angular/common/http";
+import {IntroDomainFacade} from "./intro-domain.facade";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -24,9 +26,11 @@ import {provideHttpClient, withInterceptorsFromDi} from "@angular/common/http";
   imports: [
     CommonModule,
     CoreMatModule,
+    ReactiveFormsModule,
   ],
   providers:[
     IntroDataService,
+    IntroDomainFacade,
     provideHttpClient(withInterceptorsFromDi()),
   ],
   exports:[

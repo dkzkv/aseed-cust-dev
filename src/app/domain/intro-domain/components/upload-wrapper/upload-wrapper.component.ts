@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {IntroDomainFacade} from "../../intro-domain.facade";
+import {IntroDomainRegistration} from "../../models/intro-domain.enums";
 
 @Component({
   selector: 'as-upload-wrapper',
@@ -6,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './upload-wrapper.component.scss'
 })
 export class UploadWrapperComponent {
+  constructor(public _intoFacade: IntroDomainFacade) {
+  }
 
+  protected readonly IntroDomainRegistration = IntroDomainRegistration;
 }

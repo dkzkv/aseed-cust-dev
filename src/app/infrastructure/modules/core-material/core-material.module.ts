@@ -16,6 +16,7 @@ import {MatTableModule} from "@angular/material/table";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatExpansionModule} from "@angular/material/expansion";
 import {MatSortModule} from "@angular/material/sort";
+import {MatDividerModule} from "@angular/material/divider";
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import {MatSortModule} from "@angular/material/sort";
     MatDialogModule,
     MatExpansionModule,
     MatSortModule,
+    MatDividerModule
   ],
   exports: [
     MatButtonModule,
@@ -57,6 +59,7 @@ import {MatSortModule} from "@angular/material/sort";
     MatDialogModule,
     MatSortModule,
     MatExpansionModule,
+    MatDividerModule
   ],
 })
 export class CoreMatModule {}

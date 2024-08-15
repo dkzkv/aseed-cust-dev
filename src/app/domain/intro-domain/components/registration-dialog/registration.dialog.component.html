@@ -1,1 +1,37 @@
-<p>registration.dialog works!</p>
+<mat-dialog-content>
+  <h2 mat-dialog-title>{{ isSignUp ? 'Sign Up' : 'Sign In' }}</h2>
+
+  <form [formGroup]="form">
+    <mat-form-field *ngIf="isSignUp" appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" placeholder="Name" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" placeholder="Email" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password" placeholder="Password" />
+      <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hidePassword">
+        <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <button mat-button *ngIf="!isSignUp" (click)="onForgotPassword()">Forgot your password?</button>
+    <mat-error *ngIf="errorMessage">{{ errorMessage }}</mat-error>
+
+    <button mat-raised-button color="primary" (click)="onSubmit()">
+      {{ isSignUp ? 'Create Account' : 'Sign In' }}
+    </button>
+  </form>
+
+  <mat-divider></mat-divider>
+
+  <button mat-button (click)="toggleMode()">
+    {{ isSignUp ? 'Already have an account? Sign In' : 'Don’t have an account? Sign Up' }}
+  </button>
+</mat-dialog-content>

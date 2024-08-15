@@ -1,8 +1,6 @@
 import {Component} from '@angular/core';
-import {MatButton} from "@angular/material/button";
 import {IntroDomainRegistration} from '../../models/intro-domain.enums';
-import {MatDialog, MatDialogRef} from "@angular/material/dialog";
-import {RegistrationDialogComponent} from "../registration-dialog/registration.dialog.component";
+import {IntroDomainFacade} from "../../intro-domain.facade";
 
 @Component({
   selector: 'as-sign-up-wrapper',
@@ -12,14 +10,6 @@ import {RegistrationDialogComponent} from "../registration-dialog/registration.d
 export class SignUpWrapperComponent {
   introDomainRegistration: typeof IntroDomainRegistration = IntroDomainRegistration;
 
-  constructor(private _matDialog: MatDialog) {
-  }
-
-  openRegistrationDialog(introDomainRegistration: IntroDomainRegistration) {
-    this._matDialog.open(RegistrationDialogComponent, {
-      width: '300px',
-      height: '500px',
-      data: introDomainRegistration
-    });
+  constructor(public _intoFacade: IntroDomainFacade) {
   }
 }

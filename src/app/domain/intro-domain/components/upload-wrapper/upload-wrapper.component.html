@@ -1,1 +1,12 @@
-<p>Upload Works</p>
+<div>
+  <h3>Upload Your Interview</h3>
+  <p>Simply upload interview files in audio, video, or text format. We support various formats to streamline the process.</p>
+  <ul class="upload-wrapper-ul">
+    <li><mat-icon>build_circle</mat-icon><span>audio</span></li>
+    <li><mat-icon>build_circle</mat-icon><span>video</span></li>
+    <li><mat-icon>build_circle</mat-icon><span>text</span></li>
+    <li><mat-icon>build_circle</mat-icon><span>zip</span></li>
+    <li><mat-icon>build_circle</mat-icon><span>link</span></li>
+  </ul>
+  <button mat-flat-button (click)="_intoFacade.openRegistrationDialog(IntroDomainRegistration.SignIn)">Upload file</button>
+</div>
